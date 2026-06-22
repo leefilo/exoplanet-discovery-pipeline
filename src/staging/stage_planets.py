@@ -1,5 +1,4 @@
 import duckdb
-from datetime import datetime
 
 output_path = "data/staged/stg_planets.parquet"
 
