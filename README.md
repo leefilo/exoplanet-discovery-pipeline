@@ -14,11 +14,11 @@ NASA's Exoplanet Archive contains data on over 5,000 confirmed planets discovere
 
 ## Architecture
 
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  NASA TAP    │────▶│    S3/Raw    │────▶│  S3/Staged   │────▶│   S3/Mart    │
-│     API      │     │  (Parquet)   │     │  (Parquet)   │     │  (Parquet)   │
-└──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
+```mermaid
+flowchart LR
+    A[NASA TAP API] --> B[S3/Raw<br>Parquet]
+    B --> C[S3/Staged<br>Parquet]
+    C --> D[S3/Mart<br>Parquet]
 ```
 
 **Orchestrated by Apache Airflow:**
